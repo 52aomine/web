@@ -1,0 +1,361 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+    <style>
+        .both{display: block;}
+    </style>
+</head>
+
+<body>
+    animation
+<style>
+.ani{ background-color: antiquewhite; width: 200px;height: 70px;
+    position: relative;left:0;
+    animation-name:mov_ani; 
+    animation-duration:1s; 
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;}
+@keyframes mov_ani{
+    0%{
+        left:0;
+    }
+    30%{
+        left:30%;
+    }
+    100%{
+        left:100%;
+    }
+}
+    </style>
+<div class="ani">animation</div>
+<div class="ani">animation</div>
+<table>
+        <thead>
+        <tr>
+        <th>屬性</th>
+        <th>說明</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <td><strong>animation-name</strong></td>
+        <td>動畫名稱</td>
+        </tr>
+        <tr>
+        <td><strong>animation-duration</strong></td>
+        <td>動畫持續時間，<em>預設 0</em>，單位 s 或 ms。</td>
+        </tr>
+        <tr>
+        <td><strong>animation-delay</strong></td>
+        <td>動畫延遲播放時間，<em>預設 0</em>，單位 s 或 ms。</td>
+        </tr>
+        <tr>
+        <td><strong>animation-iteration-count</strong></td>
+        <td><p>動畫播放次數，<em>預設 1</em>。<br>
+          數字：播放次數。<br>
+          infinite :動畫永遠重複播放。</p></td>
+        </tr>
+        <tr>
+        <td><strong>animation-timing-function</strong></td>
+        <td>動畫加速度函式，<em>預設 ease</em>。<br>
+        其他還有： linear、ease-in、ease-out、ease-in-out、step-start、step-end、steps(int,start/end)、cubic-bezier(n,n,n,n)。<br>
+        如果把上面的 step-start 改為 steps(3,start)，step-end 改為 steps(3,end)會變成抽格動畫。</td>
+        </tr>
+        <tr>
+        <td><strong>animation-direction</strong></td>
+        <td>動畫播放方向，<em>預設 normal</em>。<br>
+          normal：動畫正常播放（向前）。這是默認值<br>
+          reverse ：動畫反向播放（向後）<br>
+          alternate ：動畫先播放，然後播放<br>
+          alternate-reverse ：動畫先向後播放，然後向前播放</td>
+        </tr>
+        <tr>
+        <td><strong>animation-fill-mode</strong></td>
+        <td>動畫播放前後模式，<em>預設 none</em>。<br>
+          none：默認值。動畫在執行之前或之後不會對元素應用任何樣式<br>
+          <strong>forwards</strong> ：元素將保留由最後一個關鍵幀設置的樣式值（取決於動畫方向和動畫迭代次數），同最後一格freeze停止。<br>
+          backwards ：元素將獲取由第一個關鍵幀設置的樣式值（取決於動畫方向），並在動畫延遲期間保留該值<br>
+          both ：動畫將遵循向前和向後的規則，在兩個方向上擴展動畫屬性</td>
+        </tr>
+        <tr>
+        <td><strong>animation-play-state</strong></td>
+        <td>動畫播放或暫停狀態，<em>預設 running</em>。<br>
+          running：預設值，表示動畫運行。<br>
+          paused：表示動畫暫停。</td>
+        </tr>
+        </tbody>
+        </table>
+    寫法：animation:name duration | timing-function | delay | iteration-count | direction | fill-mode | play-state;<br>
+    <a href="https://www.oxxostudio.tw/articles/201803/css-animation.html">https://www.oxxostudio.tw/articles/201803/css-animation.html</a>  下方進階：Animation Events、CSSKeyframesRule用法<br>
+    <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/CSS_Animations/Using_CSS_animations#%E4%BD%BF%E7%94%A8%E9%97%9C%E9%8D%B5%E5%BD%B1%E6%A0%BC%E5%AE%9A%E7%BE%A9%E5%8B%95%E7%95%AB%E6%B5%81%E7%A8%8B">https://developer.mozilla.org/zh-TW/docs/Web/CSS/CSS_Animations/Using_CSS_animations#%E4%BD%BF%E7%94%A8%E9%97%9C%E9%8D%B5%E5%BD%B1%E6%A0%BC%E5%AE%9A%E7%BE%A9%E5%8B%95%E7%95%AB%E6%B5%81%E7%A8%8B</a>
+<div class="both"></div>
+    <div style="height: 100px;"></div>
+<p>&nbsp;</p>transform---------------<br>
+transform要搭配animation使用才能有&quot;順暢的動態&quot;，否則就是立刻變換而已，沒有漸變。<br>
+transform CSS 屬性可以讓你修改 CSS 可視化格式模型（visual formatting model）的空間維度。使用此屬性，元素可以被平移、旋轉、縮放和傾斜。
+<style>
+.tran{ background-color: antiquewhite; width: 200px;height: 70px;
+position: relative;left:0;
+animation-name:mov_tran; 
+animation-duration:1s; 
+animation-iteration-count: infinite;
+animation-direction: alternate;}
+@keyframes mov_tran{
+from{
+    transform: rotate(20deg);
+    transform: skewY(20deg);
+    transform:translate(0px,0px);/*使用這個必須移除前兩個動態設定*/
+}
+to{
+    transform: rotate(180deg);
+    transform: skewY(0deg);
+    transform:translate(200px,200px);
+}
+}
+
+.tran02{ background-color: #50C4E7; width: 200px;height: 70px;
+position: relative;left:0;
+animation-name:mov_tran02; 
+animation-duration:1s; 
+animation-iteration-count: infinite;
+animation-direction: alternate;}        
+@keyframes mov_tran02{
+from{
+    transform: matrix(0.866,0.6,-0.8,0.866,0,0);
+}
+to{
+    transform: matrix(0.586,0.8,-0.8,0.586,40,40);
+}
+}
+</style>
+    
+<div class="tran">transform</div>
+<div class="tran02">tran22</div>
+<table>
+      <tbody>
+        <tr>
+          <th>值</th>
+          <th>描述</th>
+          <th>測試</th>
+        </tr>
+        <tr>
+          <td>none</td>
+          <td>定義不進行轉換。</td>
+          <td><a target="_blank" href="https://www.w3school.com.cn/tiy/c.asp?f=css_transform_rotate&p=22">測試</a></td>
+        </tr>
+        <tr>
+          <td>matrix( <em>n</em> , <em>n</em> , <em>n</em> , <em>n</em> , <em>n</em> , <em>n</em> )</td>
+          <td>定義2D 轉換，使用六個值的矩陣。</td>
+          <td><a target="_blank" href="https://www.w3school.com.cn/tiy/c.asp?f=css_transform_matrix">測試</a></td>
+        </tr>
+        <tr>
+          <td>matrix3d( <em>n</em> , <em>n</em> , <em>n</em> , <em>n</em> , <em>n</em> , <em>n</em> , <em>n</em> , <em>n</em> , <em>n</em> , <em>n</em> , <em>n</em> , <em>n</em> , <em>n</em> , <em>n</em> , <em>n</em> , <em>n</em> )</td>
+          <td>定義3D 轉換，使用16 個值的4x4 矩陣。</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>translate( <em>x</em> , <em>y</em> )</td>
+          <td>定義2D 轉換。</td>
+          <td><a target="_blank" href="https://www.w3school.com.cn/tiy/c.asp?f=css_transform_translate">測試</a></td>
+        </tr>
+        <tr>
+          <td>translate3d( <em>x</em> , <em>y</em> , <em>z</em> )</td>
+          <td>定義3D 轉換。</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>translateX( <em>x</em> )</td>
+          <td>定義轉換，只是用X 軸的值。</td>
+          <td><a target="_blank" href="https://www.w3school.com.cn/tiy/c.asp?f=css_transform_translatex">測試</a></td>
+        </tr>
+        <tr>
+          <td>translateY( <em>y</em> )</td>
+          <td>定義轉換，只是用Y 軸的值。</td>
+          <td><a target="_blank" href="https://www.w3school.com.cn/tiy/c.asp?f=css_transform_translatey">測試</a></td>
+        </tr>
+        <tr>
+          <td>translateZ( <em>z</em> )</td>
+          <td>定義3D 轉換，只是用Z 軸的值。</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>scale( <em>x</em> , <em>y</em> )</td>
+          <td>定義2D 縮放轉換。</td>
+          <td><a target="_blank" href="https://www.w3school.com.cn/tiy/c.asp?f=css_transform_scale">測試</a></td>
+        </tr>
+        <tr>
+          <td>scale3d( <em>x</em> , <em>y</em> , <em>z</em> )</td>
+          <td>定義3D 縮放轉換。</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>scaleX( <em>x</em> )</td>
+          <td>通過設置X 軸的值來定義縮放轉換。</td>
+          <td><a target="_blank" href="https://www.w3school.com.cn/tiy/c.asp?f=css_transform_scalex">測試</a></td>
+        </tr>
+        <tr>
+          <td>scaleY( <em>y</em> )</td>
+          <td>通過設置Y 軸的值來定義縮放轉換。</td>
+          <td><a target="_blank" href="https://www.w3school.com.cn/tiy/c.asp?f=css_transform_scaley">測試</a></td>
+        </tr>
+        <tr>
+          <td>scaleZ( <em>z</em> )</td>
+          <td>通過設置Z 軸的值來定義3D 縮放轉換。</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>rotate( <em>angle</em> )</td>
+          <td>定義2D 旋轉，在參數中規定角度。</td>
+          <td><a target="_blank" href="https://www.w3school.com.cn/tiy/c.asp?f=css_transform_rotate">測試</a></td>
+        </tr>
+        <tr>
+          <td>rotate3d( <em>x</em> , <em>y</em> , <em>z</em> , <em>angle</em> )</td>
+          <td>定義3D 旋轉。</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>rotateX( <em>angle</em> )</td>
+          <td>定義沿著X 軸的3D 旋轉。</td>
+          <td><a target="_blank" href="https://www.w3school.com.cn/tiy/c.asp?f=css_transform_rotatex">測試</a></td>
+        </tr>
+        <tr>
+          <td>rotateY( <em>angle</em> )</td>
+          <td>定義沿著Y 軸的3D 旋轉。</td>
+          <td><a target="_blank" href="https://www.w3school.com.cn/tiy/c.asp?f=css_transform_rotatey">測試</a></td>
+        </tr>
+        <tr>
+          <td>rotateZ( <em>angle</em> )</td>
+          <td>定義沿著Z 軸的3D 旋轉。</td>
+          <td><a target="_blank" href="https://www.w3school.com.cn/tiy/c.asp?f=css_transform_rotatez">測試</a></td>
+        </tr>
+        <tr>
+          <td>skew( <em>x-angle</em> , <em>y-angle</em> )</td>
+          <td>定義沿著X 和Y 軸的2D 傾斜轉換。</td>
+          <td><a target="_blank" href="https://www.w3school.com.cn/tiy/c.asp?f=css_transform_skew">測試</a></td>
+        </tr>
+        <tr>
+          <td>skewX( <em>angle</em> )</td>
+          <td>定義沿著X 軸的2D 傾斜轉換。</td>
+          <td><a target="_blank" href="https://www.w3school.com.cn/tiy/c.asp?f=css_transform_skewx">測試</a></td>
+        </tr>
+        <tr>
+          <td>skewY( <em>angle</em> )</td>
+          <td>定義沿著Y 軸的2D 傾斜轉換。</td>
+          <td><a target="_blank" href="https://www.w3school.com.cn/tiy/c.asp?f=css_transform_skewy">測試</a></td>
+        </tr>
+        <tr>
+          <td>perspective( <em>n</em> )</td>
+          <td>為3D 轉換元素定義透視視圖。</td>
+          <td>測試</td>
+        </tr>
+      </tbody>
+    </table>
+    https://www.w3school.com.cn/cssref/pr_transform.asp
+    
+    
+    
+    
+    
+    <div class="both"></div>
+    <div style="height: 100px;"></div>
+    <p></p>transition---------------<br>
+    transition搭配a可以展示滑入滑出都很順暢，但transform滑出會有立即斷層。<br>
+CSS transitions 用來調整 CSS animation 變動的速度。
+    <style>
+.trsition {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s, height 4s;
+    animation-name:mov_trsion; 
+animation-duration:1s; 
+animation-iteration-count: infinite;
+animation-direction: alternate;
+}
+@keyframes mov_trsion{
+from{
+    width: 0px; height: 0px;
+}
+to{
+    width: 300px; height: 100px;
+}
+}
+     
+.trsition02 {
+  color: #425AD6;
+  width: 100px;  height: 100px;
+  background: #a5d4ff;
+  transition-delay: .4s;
+    transition-duration:2s; transition-property: all;    
+  /*可以更細這樣寫  transition: color 1s, width 1s, height 4s, background 1s;*/
+  transition-timing-function: ease-in;    
+}
+.trsition02:hover {
+    color: #9928b1; width: 300px; height: 200px; background: #efa5ff;
+}
+        
+    </style>
+    
+    <div class="trsition02">滑鼠請滑過，延遲.4s，很順暢</div>
+<div class="trsition">搭配animation</div>
+    
+    <table width="100%" border="0" cellspacing="10" cellpadding="0">
+      <tbody>
+        <tr>
+          <td>transition</td>
+          <td>使用shorthand屬性transition：<br>
+          transition: width 2s linear 1s;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>transition-delay</td>
+          <td>該transition-delay屬性指定過渡效果的延遲（以秒為單位）。</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>transition-duration</td>
+          <td>用來定義 transition 屬性發生的時間，單位為秒。</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>transition-property</td>
+          <td>用來定義可以產生 transition 屬性效果的屬性名稱，例如寬度、背景顏色 ...清單以逗號分隔。<br>
+all：所有屬性都將獲得過渡效果。<br>
+display、
+position、
+float &amp; clear、box-model(margin、border、padding、wifth / height (寬高))、background、text、
+font，<a href="https://andy6804tw.github.io/2017/12/19/css-common/">https://andy6804tw.github.io/2017/12/19/css-common/</a></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>transition-timing-function</td>
+          <td><ul>
+            <li>ease ：指定一個過渡效果，從慢速開始，然後快速，然後緩慢地結束（默認設置）</li>
+            <li>linear ：指定從開始到結束的速度相同的過渡效果</li>
+            <li>ease-in ：以慢速啟動指定過渡效果</li>
+            <li>ease-out ：指定過渡效果較慢的結尾</li>
+            <li>ease-in-out ：指定過渡效果，起點和終點較慢</li>
+            <li>cubic-bezier(n,n,n,n) ：讓您在三次方貝塞爾函數中定義自己的值</li>
+          </ul></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>transform-origin</td>
+          <td>旋轉基礎點位置。<br>
+            X 軸方向可以設定：left, center, right, 長度或百分比。<br>
+          Y 軸方向可以設定：left, center, right, 長度或百分比。</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+https://wcc723.github.io/css/2013/08/24/css-transtion-speed/ 速度比較
+</body>
+</html>

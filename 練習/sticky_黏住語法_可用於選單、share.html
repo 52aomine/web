@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+    <style>
+        .all{background: #eee; width: 600px; margin: 0 auto;}/*因為sticky必須依附父元素，所以必須要有夠高的高度，若沒有寫在這裡，那隔壁鄰居DIV的高度就要夠*/
+        .sty{position: -webkit-sticky; position: sticky;top: 0px; display: inline-block; vertical-align: top;width: 200px; background-color: cadetblue;}
+        .abc{height: 1500px; background-color: antiquewhite;}
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <div style="height: 100vh;display: inline-block; vertical-align: top;"></div>
+        <div class="sty">須指定top, right, bottom 或left 四個閾值其中之一，才可使粘性定位生效。否則其行為與相對定位相同。ie10不支援</div>         
+    </div>
+    <div class="abc"></div>
+    
+</body>
+</html>

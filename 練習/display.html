@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+    <style>
+        /*以下為flex*/
+        .flex{
+            display: flex;
+            width: 100%;
+            height: 500px;
+            border: 2px solid #fcc;
+        }
+        .item{
+            /*flex: 1;*/
+            padding: 20px; 
+            background-color: antiquewhite;
+        }
+        .item:nth-child(odd){background-color: #b3e1d6;}
+        .block .item{display: block;}
+    </style>
+</head>
+
+<body>
+    <p>以下是flex</p>
+    <div class="flex">
+        <div class="item">item 01</div>
+        <div class="item">item 02item 02item 02item 02item 02item 02item 02item 02item 02item 02item 02item 02item 02item 02item 02item 02item 02item 02item 02item 02item 02item 02item 02item 02</div>
+        <div class="item">item 03</div>
+        <div class="item">item 04</div>
+    </div>
+    
+    <p>&nbsp;</p>
+    <p>以下是block/ inline-block</p>
+    <div class="block">
+        <div class="item">item 01</div>
+        <div class="item">item 02</div>
+        <div class="item">item 03</div>
+    </div>
+    
+    
+</body>
+</html>

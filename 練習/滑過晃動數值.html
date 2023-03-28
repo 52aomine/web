@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>無標題文件</title>
+    <style>
+    .ab{
+        display: block;padding: 50px; border: 1px solid; width: 100px;
+        transform-origin: 9px 28px;
+        }
+    .ab:hover{-webkit-animation: icon05-02 .6s linear 0s 1 normal forwards;
+    animation: icon05-02 .6s linear 0s 1 normal forwards;
+}
+   @-webkit-keyframes icon05-02 {
+	0%,to {
+	transform:rotate(0)
+}
+25% {
+	transform:rotate(5deg)
+}
+50% {
+	transform:rotate(-3deg)
+}
+75% {
+	transform:rotate(1deg)
+}
+}@keyframes icon05-02 {
+	0%,to {
+	transform:rotate(0)
+}
+25% {
+	transform:rotate(5deg)
+}
+50% {
+	transform:rotate(-3deg)
+}
+75% {
+	transform:rotate(1deg)
+}
+}
+        
+   .cmbox{position: relative; border: 1px solid;padding: 50px;}
+   .cm{position: absolute;top: 0; left: 0; width: 100px;transform-origin: 0 100%;}
+   .cmbox:hover .cm .mov{
+       -webkit-animation: icon04-02 .6s cubic-bezier(.445,.05,.55,.95) 0s 1 normal forwards;
+    animation: icon04-02 .6s cubic-bezier(.445,.05,.55,.95) 0s 1 normal forwards;}
+   .cmbox:hover .cm{
+       top: 2px; left: 6px;-webkit-animation: icon04-01 .6s cubic-bezier(.445,.05,.55,.95) 0s 1 normal forwards; animation: icon04-01 .6s cubic-bezier(.445,.05,.55,.95) 0s 1 normal forwards;}
+        
+    @-webkit-keyframes icon04-01 {
+	0% {
+	transform:translate3d(34px,0,0)
+}
+to {
+	transform:translate3d(0,0,0)
+}
+}@keyframes icon04-01 {
+	0% {
+	transform:translate3d(34px,0,0)
+}
+to {
+	transform:translate3d(0,0,0)
+}
+}
+    @-webkit-keyframes icon04-02 {
+	0%,66% {
+	transform:rotate(-15deg)
+}
+33%,to {
+	transform:rotate(0)
+}
+}@keyframes icon04-02 {
+	0%,66% {
+	transform:rotate(-15deg)
+}
+33%,to {
+	transform:rotate(0)
+}
+}
+        
+        
+        
+        .flower{position: relative;border: 1px solid;padding: 50px;}
+        .flower .mov2{position: absolute;top: 2px; left: 22px; font-size: 60px;
+            transform-origin: 40% 60%;
+        opacity: 0;
+    }
+        .flower:hover .mov2{-webkit-animation: icon03-01 .4s cubic-bezier(.175,.885,.32,1.275) 450ms 1 normal forwards;
+    animation: icon03-01 .4s cubic-bezier(.175,.885,.32,1.275) 450ms 1 normal forwards;}
+        
+        @-webkit-keyframes icon03-01{0%{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}@keyframes icon03-01{0%{opacity:0;transform:scale(0)}to{opacity:1;transform:scale(1)}}
+        @-webkit-keyframes icon03-02{0%{opacity:1;transform:scale(.7)}40%{opacity:1}to{opacity:0;transform:scale(1.2)}}
+        
+  
+
+    </style>
+</head>
+
+<body>
+    <div class="ab">滑過效果</div>
+    <div class="cmbox"><div class="cm"><div class="mov">滑過效果2</div></div></div>
+    
+    <div class="flower">滑過  點點出來<div class="mov2">●</div></div>
+    
+    
+    
+</body>
+</html>
